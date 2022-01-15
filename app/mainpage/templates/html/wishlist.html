@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Мой список желаний(список)</title>
+</head>
+<body>
+<table border="1">
+   <caption>Список желаний<caption>
+<tr>
+    <th>Название</th>
+    <th>Цена</th>
+    <th>Ссылка</th>
+    <th>Описание</th>
+    <th></th>
+</tr>
+   {% for item in list %}
+<tr>
+    <th type="text" name=name>{{item.name}}</th>
+    <th type="text" name=price>{{item.price}}</th>
+    <th type="text" name="url"><a href="http://{{item.url}}">{{item.url}}</a></th>
+    <th type="text" name="'disc">{{item.disc}}</th>
+    <th>
+        <form method="post">
+            <button type="submit" name="item" value={{item.id}}>Удалить</button>
+        </form>
+    </th>
+</tr>
+   {% endfor %}
+</table>
+<a href="/">Главная страница</a>
+</body>
+</html>
